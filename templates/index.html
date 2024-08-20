@@ -14,11 +14,19 @@
     <div class="search-box">
         <form action="/addIngredient" method="post" class="row"><!---->
             <input type="text" id="input-box" placeholder="Find and select ingredient"
-            autocomplete="off">
+            autocomplete="off" name="ingredient">
             <button type="submit" class="search-button"><i class="fa-solid fa-arrow-right"></i></button>
         </form><!---->
+        <form action="/clearAll" method="post" class="row"><!---->
+            <button type="submit" class="search-button">Clear</button>
+        </form>
         <div class="result-box">
-            
+            <p>Selected Ingredients:</p>
+            <ul>
+                {% for ingredient in ingredients %}
+                    <li>{{ ingredient }}</li>
+                {% endfor %}
+            </ul>
         </div>
     </div>
     <!--<script src="autocomplete.js"></script>-->
@@ -27,8 +35,8 @@
         <div class="selected-ingredients">
             <h2>Results:</h2>
             <ul>
-                {% for word in words %}
-                    <li>{{ word }}</li>
+                {% for result in results %}
+                    <li>{{ result[0] }}: {{ result[1] }}</li>
                 {% endfor %}
             </ul>
         </div>

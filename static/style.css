@@ -56,7 +56,7 @@ button .fa-solid{
 
 .content{
     width: 600px;
-    height: 200px;
+    height: auto;
     background: #fff;
     margin: 50px auto 50px;
     border-radius: 5px;
